@@ -2,85 +2,49 @@ package SY4;
 
 import java.util.Scanner;
  
-/**
- * ÑĞ¾¿ÉúÀà
- * @author Administrator
- *
- */
 public class Graduate implements StudentInterface,TeacherInterface{
-	// ³ÉÔ±±äÁ¿
 	String name;
 	String sex;
 	int age;
 	double fee;
 	double pay;
 	
-	// ÊµÏÖ½Ó¿ÚÖĞµÄ³éÏó·½·¨
-	@Override
 	public void setPay(double pay) {
 		this.pay = pay * 12;
-		System.out.println("ÄãµÄÄêÊÕÈëÎª£º" + this.pay);
+		System.out.println("ä½ çš„å¹´æ”¶å…¥ä¸ºï¼š" + this.pay);
 	}
 	
-	// ÊµÏÖ½Ó¿ÚÖĞµÄ³éÏó·½·¨
-	@Override
 	public void getPay(double pay) {
 		this.pay = pay * 12;
-		System.out.println("ÄãµÄÄêÊÕÈëÎª£º" + this.pay);
+		System.out.println("ä½ çš„å¹´æ”¶å…¥ä¸ºï¼š" + this.pay);
 	}
 	
-	// ÊµÏÖ½Ó¿ÚÖĞµÄ³éÏó·½·¨
-	@Override
 	public void setFee(double fee) {
 		this.fee = fee;
-		System.out.println("ÄãµÄÑ§·ÑÉèÖÃÎª£º" + this.fee);
+		System.out.println("ä½ çš„å­¦è´¹è®¾ç½®ä¸ºï¼š" + this.fee);
 	}
 	
-	// ÊµÏÖ½Ó¿ÚÖĞµÄ³éÏó·½·¨
 	public void getFee(double fee) {
 		this.fee = fee;
-		System.out.println("ÄãµÄÑ§·ÑÎª£º" + this.fee);
+		System.out.println("ä½ çš„å­¦è´¹ä¸ºï¼š" + this.fee);
 	}
 	
-	/**
-	 *  ÊÇ·ñÒª´û¿î
-	 * @return
-	 */
-	public boolean Loan(){
-		if ((this.pay - this.fee) < 2000) {
-			System.out.println("ÄãµÄÄêÊÕÈë" + this.pay + ",¼õÈ¥Ñ§·Ñ" + this.fee + "µÈÓÚ" + (this.pay - this.fee));
-			return true;
-		}
-		System.out.println("ÄãµÄÄêÊÕÈë" + this.pay + ",¼õÈ¥Ñ§·Ñ" + this.fee + "µÈÓÚ" + (this.pay - this.fee));
-		return false;
-	}
 	
 	public static void main(String[] args) {
-		// ´´½¨Ò»¸öÑĞ¾¿Éú¶ÔÏó
 		Graduate graduate = new Graduate();
-		// ÑĞ¾¿Éú¶ÔÏóµÄ³õÊ¼»¯
-		graduate.name = "WangYiFei";
-		System.out.println("ÄãºÃ:" + graduate.name);
+		graduate.name = "Jack";
+		System.out.println("ä½ å¥½:" + graduate.name);
 		
-		// ÉèÖÃÔÂ¹¤×Ê
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("ÇëÊäÈëÄãµÄÔÂ¹¤×Ê£º");
+		System.out.println("è¯·è¾“å…¥ä½ çš„æœˆå·¥èµ„ï¼š");
 		double pay = scanner.nextDouble();
 		graduate.setPay(pay);
 	
-		// ÉèÖÃÑ§·Ñ
-		System.out.println("ÇëÊäÈëÄãµÄÑ§·Ñ£º");
+		System.out.println("è¯·è¾“å…¥ä½ çš„å­¦è´¹ï¼š");
 		double fee = scanner.nextDouble();
 		graduate.setFee(fee);
 		
-		// ÅĞ¶ÏÊÇ·ñĞèÒª´û¿î
-		boolean flag = graduate.Loan();
-		if (flag) {
-			System.out.println("ĞèÒª´û¿î");
-		}else {
-			System.out.println("ÎŞĞè´û¿î");
-		}
-		scanner.close();
+		
 	}
  
 }
