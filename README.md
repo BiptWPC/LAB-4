@@ -98,7 +98,7 @@ public final static void calculator(int salary,int fee) {
 
 
 ## 实验结果
-
+https://github.com/BiptWPC/LAB-4/blob/main/%E7%BB%93%E6%9E%9C.png
 
 ## 实验感想
 通过本次实验，我学会了如何去设计抽象类，还明白了接口与类的不同，前者是描述对象的属性和方法后者则包含含类要实现的方法，并且也对异常处理也有了一部分的经验，本次试验后，我会继续学习一些有关异常处理知识来补充实验和课堂的不足。
