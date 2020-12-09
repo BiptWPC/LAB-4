@@ -24,8 +24,7 @@
 ## 核心方法
 //初始化学生信息
 ```Java
-  Scanner sc = new Scanner(System.in);
-```
+  Scanner sc = new Scanner(System.in);  
 //Teacher teacher = new Teacher(args[0],args[1],age);  
   int[] age = new int[5];  
   String[] information = new String[10];  
@@ -36,62 +35,66 @@
   age[0] = sc.nextInt();  
   sc.nextLine();  
   Student li = new Student(information[0], information[1], age[0]);   
+```
 
-
+```Java
 //捕捉输入异常
-boolean i = true;
-		while (i) {
-			try {
-				System.out.println("输入薪水");
-				int salary = 0;
-				salary = sc.nextInt();
-				System.out.println(salary);
-				li.setsalary(salary);
-				int fee = 0;
-				System.out.println("输入学费");
-				fee = sc.nextInt();
-				System.out.println(salary);
-				li.setfee(fee);
-				//System.out.println(""+li.getfee());
-				i = false;
-			} catch (ArrayIndexOutOfBoundsException ne) {
-				System.out.println("数组越界");
+boolean i = true;  
+	while (i) {  
+		try {  
+			System.out.println("输入薪水");  
+			int salary = 0;  
+			salary = sc.nextInt();  
+			System.out.println(salary);  
+			li.setsalary(salary);  
+			int fee = 0;  
+			System.out.println("输入学费");  
+			fee = sc.nextInt();  
+			System.out.println(salary);  
+			li.setfee(fee);  
+			//System.out.println(""+li.getfee());  
+			i = false;  
+		} catch (ArrayIndexOutOfBoundsException ne) {  
+			System.out.println("数组越界");  
+		} catch (NumberFormatException e) {  
+			System.out.println(e.getMessage() + "数字格式错误");  
+		} catch (Exception m) {  
+			System.out.println("出现未知错误");  
+		} finally {  
+			sc.nextLine();  
+		}  
+	}  
+	System.out.println("交税信息");  
+	calculator(li.getsalary(),li.getfee());  
+```
 
-			} catch (NumberFormatException e) {
-				System.out.println(e.getMessage() + "数字格式错误");
-			} catch (Exception m) {
-				System.out.println("出现未知错误");
-			} finally {
-				sc.nextLine();
-			}
-		}
-		System.out.println("交税信息");
-		calculator(li.getsalary(),li.getfee());
+```Java
+//学生管理的接口，定义学生必须要有的方法  
+interface StudentManage {  
+    void setfee(int fee);  
+    int getfee();  
+}  
+```
 
-//学生管理的接口，定义学生必须要有的方法
-interface StudentManage {
-    void setfee(int fee);
-    int getfee();
-}
-
+```Java
 //计算需要缴纳税款的方法（部分省略）
-public final static void calculator(int salary,int fee) {
-		int  year_salary = salary - fee;
-		double x = 0;
-		if (year_salary <= 36000) {
-			x = year_salary * 0.03;
-		}
-		else if (36000 < year_salary && year_salary <= 144000){
-			x = year_salary * 0.1 - 2520; }
+public final static void calculator(int salary,int fee) {  
+	int  year_salary = salary - fee;  
+	double x = 0;  
+	if (year_salary <= 36000) {  
+	  x = year_salary * 0.03;  
+	}  
+	  else if (36000 < year_salary && year_salary <= 144000){  
+	  x = year_salary * 0.1 - 2520; }  
                
-	        ...
+	...  
 	
-	
-		else if (960000 < year_salary) {
-			x = year_salary * 0.45 - 181920;
-		}
-		System.out.println("需要缴纳的税款" +x);
-	}
+	else if (960000 < year_salary) {  
+	x = year_salary * 0.45 - 181920;  
+	}  
+	System.out.println("需要缴纳的税款" +x);  
+	}  
+```
 
 
 ## 实验结果
