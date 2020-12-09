@@ -23,7 +23,8 @@
 
 ## 核心方法
 
-//初始化学生信息
+
+`<//初始化学生信息
   Scanner sc = new Scanner(System.in);
 //Teacher teacher = new Teacher(args[0],args[1],age);
   int[] age = new int[5];
@@ -34,8 +35,7 @@
   information[1] = sc.nextLine();
   age[0] = sc.nextInt();
   sc.nextLine();
-  Student li = new Student(information[0], information[1], age[0]);
-
+  Student li = new Student(information[0], information[1], age[0]);>`  
 
 		int[] age = new int[5];
 		String[] information = new String[10];
