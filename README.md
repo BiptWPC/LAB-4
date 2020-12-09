@@ -22,23 +22,21 @@
 
 
 ## 核心方法
-
-` `` Java
-
 //初始化学生信息
+```Java
   Scanner sc = new Scanner(System.in);
-//Teacher teacher = new Teacher(args[0],args[1],age);
-  int[] age = new int[5];
-  String[] information = new String[10];
-  System.out.println("输入研究生信息");
-  System.out.println("性别，姓名，年龄");
-  information[0] = sc.nextLine();
-  information[1] = sc.nextLine();
-  age[0] = sc.nextInt();
-  sc.nextLine();
-  Student li = new Student(information[0], information[1], age[0]);  
+```
+//Teacher teacher = new Teacher(args[0],args[1],age);  
+  int[] age = new int[5];  
+  String[] information = new String[10];  
+  System.out.println("输入研究生信息");  
+  System.out.println("性别，姓名，年龄");  
+  information[0] = sc.nextLine();  
+  information[1] = sc.nextLine();  
+  age[0] = sc.nextInt();  
+  sc.nextLine();  
+  Student li = new Student(information[0], information[1], age[0]);   
 
-` `` 
 
 //捕捉输入异常
 boolean i = true;
