@@ -25,7 +25,7 @@
 
 
 `<//初始化学生信息
-  Scanner sc = new Scanner(System.in);
+Scanner sc = new Scanner(System.in);
 //Teacher teacher = new Teacher(args[0],args[1],age);
   int[] age = new int[5];
   String[] information = new String[10];
